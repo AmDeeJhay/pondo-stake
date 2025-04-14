@@ -5,7 +5,12 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
 
 interface WalletAnalyticsProps {
-  userData: any
+  userData: {
+    id: string
+    name: string
+    email: string
+    walletBalance: number
+  }
 }
 
 export function WalletAnalytics({ userData }: WalletAnalyticsProps) {

@@ -10,9 +10,15 @@ import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 
 export function RewardSimulator() {
   const [stakeAmount, setStakeAmount] = useState(1000)
-  const [stakeDuration, setStakeDuration] = useState(30)
+  const [stakeDuration] = useState(30)
   const [pndoBurn, setPndoBurn] = useState(0)
-  const [simulationData, setSimulationData] = useState<any[]>([])
+  interface SimulationData {
+    day: number
+    rewards: number
+    cumulative: number
+  }
+
+  const [simulationData, setSimulationData] = useState<SimulationData[]>([])
   const [timeframe, setTimeframe] = useState("30d")
 
   // Calculate rewards based on inputs

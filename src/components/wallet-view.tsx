@@ -10,7 +10,12 @@ import { Label } from "@/components/ui/label"
 import { Badge } from "@/components/ui/badge"
 
 interface WalletViewProps {
-  userData: any
+  userData: {
+    walletAddress: string;
+    stakedAleo: number;
+    pAleoBalance: number;
+    pndoRewards: number;
+  }
 }
 
 export function WalletView({ userData }: WalletViewProps) {

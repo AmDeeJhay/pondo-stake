@@ -1,6 +1,5 @@
 "use client"
 
-import { useState } from "react"
 import { Settings, Moon, Sun, Languages, Bell, Lock, Shield, Database } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "../ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -12,7 +11,6 @@ import { useTheme } from "next-themes"
 
 export function SettingsView() {
   const { theme, setTheme } = useTheme()
-  const [showApiKey, setShowApiKey] = useState(false)
 
   return (
     <div className="space-y-6">

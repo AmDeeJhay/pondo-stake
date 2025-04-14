@@ -1,22 +1,31 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { ArrowUpRight, ArrowDownRight, TrendingUp, Wallet } from "lucide-react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Progress } from "@/components/ui/progress"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { useState } from "react";
+import { ArrowUpRight, ArrowDownRight, TrendingUp, Wallet } from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 interface PortfolioOverviewProps {
-  userData: any
-  className?: string
+  userData: {
+    stakedAleo: number;
+    stakedPercentage: number;
+    pAleoBalance: number;
+    pAleoRatio: number;
+    pndoRewards: number;
+    pndoRewardsDaily: number;
+    stakingRoi: number;
+    stakingRoiChange: number;
+  };
+  className?: string;
 }
 
 export function PortfolioOverview({ userData, className }: PortfolioOverviewProps) {
-  const [view, setView] = useState("grid")
+  const [view, setView] = useState("grid");
 
   return (
     <Card className={`border bg-card/50 backdrop-blur-sm ${className}`}>
-      <CardHeader className="pb-2">
+      <CardHeader>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Wallet className="h-5 w-5 text-primary" />
@@ -160,5 +169,5 @@ export function PortfolioOverview({ userData, className }: PortfolioOverviewProp
         </Tabs>
       </CardContent>
     </Card>
-  )
+  );
 }
